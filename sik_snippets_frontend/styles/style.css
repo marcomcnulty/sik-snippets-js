@@ -1,0 +1,409 @@
+/* -------------------------------------------------- */
+/* BASIC SETUP */
+/* -------------------------------------------------- */
+
+:root {
+  --dark: #22232F;
+}
+
+@font-face {
+  font-family: 'Nebula';
+  src: url('Nebula-Hollow.ttf');
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------------------------- */
+/* BUTTONS */
+/* -------------------------------------------------- */
+
+.ButtonBox {
+  width: 750px;
+  text-align: right;
+}
+
+.Primary {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding: 0.5rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  height: 50px;
+  width: 145px;
+  background: transparent;
+  color: white;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
+
+.ButtonBox-signUpButton:hover {
+  border-color: #82E9FF;
+  color: #82E9FF;
+  transition: ease-in 0.2s;
+}
+
+.ButtonBox-loginButton:hover {
+  border-color: #FF63C3;
+  color: #FF63C3;
+  transition: ease-in 0.2s;
+}
+
+.AccountButton {
+  font-size: 1.5rem;
+  height: 100px;
+  width: 85px;
+  position: absolute;
+  right: 40px;
+  top: 50px;
+}
+
+.EditorColumn-save {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.EditorColumn-save:hover {
+  border-color: red;
+  color: red;
+  transition: ease-in 0.2s;
+}
+
+/* -------------------------------------------------- */
+/* PAGE */
+/* -------------------------------------------------- */
+
+.Page {
+  color: white;
+  background-color: var(--dark);
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.Blackout {
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  background-color: var(--dark);
+  display: none;
+  opacity: 0.99;
+}
+
+.Light {
+  background-color: white;
+  color: var(--dark);
+}
+
+.Hide {
+  display: none;
+}
+
+/* -------------------------------------------------- */
+/* PROFILE */
+/* -------------------------------------------------- */
+
+.Container {
+  height: 83.5%;
+  width: 100%;
+}
+
+.Profile {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  margin-top: 50px;
+  grid-template-areas: "sidebar category snippet editor";
+  grid-template-columns: 0.2fr 0.5fr 0.5fr 1.75fr;
+}
+
+.Profile,
+.Profile>* {
+  border: 2px solid yellow;
+}
+
+/* -------------------------------------------------- */
+/* COLUMNS */
+/* -------------------------------------------------- */
+
+.Sidebar {
+  grid-area: sidebar;
+}
+
+.Sidebar-book {
+  margin: 30px 20px 20px 20px;
+}
+
+.List {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.ListItem {
+  color: white;
+  border-bottom: 1px dotted #F1FF7E;
+  padding: 5px;
+  margin: 5px;
+  text-align: right;
+  max-width: 75%;
+  overflow: hidden;
+}
+
+.Selected {
+  border-bottom: 5px solid red;
+}
+
+.Delete {
+  margin-left: 10px;
+  color: red;
+}
+
+.ListItem p,
+.Column input {
+  display: inline-block;
+  line-height: 50px;
+  text-align: left;
+}
+
+.ColumnHeader {
+  margin: 30px;
+}
+
+.ColumnHeader i {
+  vertical-align: middle;
+}
+
+.ColumnInput {
+  font-size: 1rem;
+  height: 41px;
+  padding-top: 14px;
+  padding-bottom: 17px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* -------------------------------------------------- */
+/* Snippet Category */
+/* -------------------------------------------------- */
+
+.CategoryColumn {
+  grid-area: category;
+  overflow: auto;
+  resize: horizontal;
+  min-width: 25vw;
+  max-width: 30vw;
+}
+
+.CategoryColumn p {
+  display: inline;
+}
+
+.SnippetColumn {
+  grid-area: snippet;
+  overflow: auto;
+  resize: horizontal;
+  min-width: 25vw;
+  max-width: 30vw;
+}
+
+.EditorColumn {
+  grid-area: editor;
+  background-color: black;
+}
+
+.EditorColumn-Editor {
+  display: block;
+  height: 97.4%;
+  width: 93%;
+}
+
+.EditorColumn-header {
+  text-align: center;
+}
+
+.EditorColumn-editorArea {
+  width: 100%;
+  height: 97%;
+  border: none;
+  color: white;
+  font-family: Consolas,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 20px;
+  resize: none;
+  background-color: black;
+}
+
+.EditorColumn-editorArea:focus {
+  outline-width: 0;
+}
+
+/* -------------------------------------------------- */
+/* TITLE */
+/* -------------------------------------------------- */
+
+.Header {
+  height: 170px;
+  width: 800px;
+  border-bottom: 5px solid white;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.Header-Text {
+  font-family: 'Nebula';
+  font-size: 5rem;
+  line-height: 4rem;
+  letter-spacing: 15px;
+}
+
+.Header-Text:first-child:first-letter {
+  float: left;
+  font-size: 15rem;
+  line-height: 6.2rem;
+  letter-spacing: -15px;
+}
+
+.Code {
+  letter-spacing: -1.2rem;
+}
+
+.Code-Bracket {
+  color: #48FF6C;
+}
+
+.Code-First {
+  color: red;
+
+}
+
+.Code-Second {
+  color: #82E9FF;
+
+}
+
+.Code-Third {
+  color: #FF63C3;
+}
+
+.Code-Fourth {
+  color: #F1FF7E;
+}
+
+/* -------------------------------------------------- */
+/* LANDING */
+/* -------------------------------------------------- */
+
+.Info {
+  font-size: 2rem;
+  height: 300px;
+  width: 800px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.Info-list {
+  list-style: none;
+}
+
+.Info-listItem {
+  margin: 20px;
+  list-style: none;
+  letter-spacing: 2px;
+}
+
+/* -------------------------------------------------- */
+/* FORM */
+/* -------------------------------------------------- */
+
+.FormModal {
+  border: solid 1px white;
+  border-radius: 5px;
+  margin: 10px;
+  display: none;
+  top: 0%;
+  right: 20%;
+}
+
+.FormModal-close {
+  padding: 10px;
+  position: absolute;
+  right: 0;
+}
+
+.FormModal-close:hover {
+  cursor: pointer;
+}
+
+.Visible {
+  position: absolute;
+  display: block;
+  z-index: 1010;
+}
+
+.Form {
+  margin-top: 80px;
+}
+
+.Form-row {
+  margin: 40px;
+}
+
+.Form-row:last-child {
+  text-align: right;
+}
+
+.Form-input {
+  font-size: 1.2rem;
+}
+
+.Form-submitButton:hover {
+  cursor: pointer;
+  border-color: #F1FF7E;
+  color: #F1FF7E;
+  transition: ease-in 0.2s;
+}
+
+/* -------------------------------------------------- */
+/* ROWS */
+/* -------------------------------------------------- */
+
+.Row-Top {
+  overflow: auto;
+  resize: vertical;
+  min-height: 33vh;
+  max-height: 75vh;
+}
+
+.Row-Bottom {
+  min-height: 33vh;
+  max-height: 75vh;
+}
